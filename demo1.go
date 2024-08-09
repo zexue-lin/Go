@@ -17,6 +17,6 @@ func main() {
 	fmt.Printf("年龄：%d，名字：%s\n", age, name)
 
 	// 使用 fmt.Println 进行简单输出
-	fmt.Println("这是简单输出，没有格式化")
+	fmt.Println("这是简单输出，没有格式化,再测试一下")
 	fmt.Println(age, name)
 }
