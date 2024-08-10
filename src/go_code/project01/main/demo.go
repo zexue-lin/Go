@@ -1,5 +1,6 @@
 package main
 
+// Go变量定义
 import (
 	"fmt"
 	"sort"

@@ -1,5 +1,6 @@
 package main
 
+// Go输出正弦函数图像
 import (
 	"image"
 	"image/color"

@@ -1,5 +1,6 @@
 package main
 
+// Go变量定义
 import "fmt"
 
 // 声明全局变量
@@ -10,6 +11,7 @@ func main() {
 	var a int = 3
 	fmt.Printf("a = %d\n", a) // 输出3
 
+	//var age int       age = 25  等价于下面的短变量声明并初始化
 	age := 25
 	name := "Alice"
 
