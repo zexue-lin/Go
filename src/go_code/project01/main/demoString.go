@@ -33,5 +33,12 @@ fmt.Println(address)
 	var d byte
 	var isMarried bool
 	var name string
-	fmt.Printf("a=%d,b=%f,c=%f,d=%c,isMarried=%t,name=%v", a, b, c, d, isMarried, name)
+	fmt.Printf("a=%d,b=%f,c=%f,d=%c,isMarried=%t,name=%v\n", a, b, c, d, isMarried, name)
+
+	var stt = "12dasfa"
+	fmt.Printf("字符串的第一个字是:%c", stt[2]) // 这种方法只对纯ASCII码的字符有效
+
+	// 这种就不适用了
+	var str11 = "多看一眼就要爆炸"
+	fmt.Printf("str1字符串的第一个字是：%s", str11[0:1])
 }
