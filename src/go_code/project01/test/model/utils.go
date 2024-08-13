@@ -1,6 +1,4 @@
 package model
 
-func main() {
-	var HeroName = "祖国人"
-
-}
+// 这里首字母是大写的，其他包可以访问
+var HeroName = "祖国人"

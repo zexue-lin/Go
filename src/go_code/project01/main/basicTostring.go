@@ -35,7 +35,7 @@ func main() {
 	var num3 = 99
 	var num4 = 99.99
 	var b2 = true
-
+	fmt.Println("-----方式二-----")
 	str = strconv.FormatInt(int64(num3), 10) // base:10 就代表转成10进制的数，2就是2进制的数
 	fmt.Printf("str type is %T,str=%v\n", str, str)
 	// num4：要进行格式化的浮点数；'f'：指定格式化的样式。（这里是常规样式）；10:表示小数点后的数字位数，64:指定 num4 的类型为 float64 。
