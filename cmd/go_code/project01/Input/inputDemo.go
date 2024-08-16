@@ -1,4 +1,4 @@
-package main
+package input
 
 import "fmt"
 
@@ -24,6 +24,6 @@ func main() {
 	// 方式2
 	// fmt.Scanf,可以按指定的格式输入
 	fmt.Println("请输入你的姓名，年龄，薪水，是否通过考试，使用空格隔开")
-	fmt.Scanf("%s,%d,%f,%t", &name, &age, &sal, &isPass)
+	fmt.Scanf("%s %d %f %t", &name, &age, &sal, &isPass)
 	fmt.Printf("姓名=%v,年龄=%v,薪水=%v,是否通过考试=%t", name, age, sal, isPass)
 }

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"project01/test/model"
+	"Go/cmd/go_code/project01/test/model"
 )
 
 func main() {
