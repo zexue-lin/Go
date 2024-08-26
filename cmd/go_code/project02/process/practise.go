@@ -55,14 +55,78 @@ func main() {
 	//   *     2 * 层数 -1  ，空格数=总层数-当前层
 	//  ***    2 * 层数 -1  ，
 	// *****   2 * 层数 -1  ，
-	for a := 0; a < 5; a++ {
-		for k := 0; k < 5-a; k++ {
+	// for a := 1; a <= 5; a++ {
+	// 	for k := 0; k < 5-a; k++ {
+	// 		fmt.Print(" ")
+	// 	}
+
+	// 	for b := 1; b <= 2*a-1; b++ {
+	// 		fmt.Print("*")
+	// 	}
+	// 	fmt.Println()
+	// }
+
+	// 打印空心金字塔
+	// 每层的第一个和最后一个是*，其余的是空格
+	// 最后一层全是*
+	// var floor = 5
+	// for a := 1; a <= floor; a++ {
+	// 	for k := 1; k <= floor-a; k++ {
+	// 		fmt.Print(" ")
+	// 	}
+
+	// 	for b := 1; b <= 2*a-1; b++ {
+	// 		if b == 1 || b == 2*a-1 || a == floor {
+	// 			fmt.Print("*")
+	// 		} else {
+	// 			fmt.Print(" ")
+	// 		}
+	// 	}
+
+	// 	fmt.Println()
+	// }
+
+	// 打印空心菱形
+	var floor = 5
+	for a := 1; a <= floor; a++ {
+		for k := 1; k <= floor-a; k++ {
 			fmt.Print(" ")
 		}
 
-		for b := 0; b < 2*a-1; b++ {
-			fmt.Print("*")
+		for b := 1; b <= 2*a-1; b++ {
+			if b == 1 || b == 2*a-1 {
+				fmt.Print("*")
+			} else {
+				fmt.Print(" ")
+			}
 		}
 		fmt.Println()
 	}
+	for a := floor - 1; a > 0; a-- {
+		for k := 1; k <= floor-a; k++ {
+			fmt.Print(" ")
+		}
+
+		for b := 1; b <= 2*a-1; b++ {
+			if b == 1 || b == 2*a-1 {
+				fmt.Print("*")
+			} else {
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
+	// 输出9*9乘法表
+	// for a := 1; a < 10; a++ {
+	// 	for b := 1; b <= a; b++ {
+	// 		fmt.Printf("%d*%d=%d ", b, a, a*b)
+	// 	}
+	// 	fmt.Println()
+	// }
+// var c3c [3] int = [3]int{1,2,3}
+cc := [3]int{1,2,3}
+for k ,v := range cc{
+	fmt.Printf("k=%d,v=%d\n",k,v)
+}
+fmt.Println(cc[2])
 }
