@@ -124,9 +124,5 @@ func main() {
 	// 	fmt.Println()
 	// }
 // var c3c [3] int = [3]int{1,2,3}
-cc := [3]int{1,2,3}
-for k ,v := range cc{
-	fmt.Printf("k=%d,v=%d\n",k,v)
-}
-fmt.Println(cc[2])
+
 }
