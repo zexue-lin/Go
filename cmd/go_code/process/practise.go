@@ -117,12 +117,12 @@ func main() {
 		fmt.Println()
 	}
 	// 输出9*9乘法表
-	// for a := 1; a < 10; a++ {
-	// 	for b := 1; b <= a; b++ {
-	// 		fmt.Printf("%d*%d=%d ", b, a, a*b)
-	// 	}
-	// 	fmt.Println()
-	// }
+	for a := 1; a < 10; a++ {
+		for b := 1; b <= a; b++ {
+			fmt.Printf("%d*%d=%d ", b, a, a*b)
+		}
+		fmt.Println()
+	}
 // var c3c [3] int = [3]int{1,2,3}
 
 }
