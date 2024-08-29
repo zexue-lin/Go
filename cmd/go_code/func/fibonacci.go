@@ -3,20 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	res := fbn(3)
-
-	fmt.Println("res=",res)
-	fmt.Println("res=",fbn(4))
-	fmt.Println("res=",fbn(5))
-	fmt.Println("res=",fbn(6))
-
+	res := 0
+	for i := 1; i < 10; i++ {
+		res = fbn(i)
+		fmt.Printf("fbn(%d)=%d\n",i,res)
+	}
 }
 
-func fbn(n int) int {
+func fbn(n int) (res int) {
 	// 斐波那契数列 1 1 2 3 5 8 13
-	if n == 1 || n == 2 {
-		return 1
+	if n <= 2 {
+		res = 1
 	} else {
-		return fbn(n-1) + fbn(n-2)
+		res = fbn(n-1) + fbn(n-2)
 	}
+	return
 }

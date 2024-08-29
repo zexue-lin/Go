@@ -1,13 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+)
 
-func fire() {
-	fmt.Println("fire")
-}
+// func visit(list []int, f func(int)) {
+// 	for _, v := range list {
+// 		f(v)
+// 	}
+// }
+
+var skillParam = flag.String("skill", "", "skill to perform")
 
 func main() {
-	var f func()  // 定义f变量，数据类型是func()
-	f = fire
-	f()  // 调用函数，实际上调用的就是fire()
+	// 使用匿名函数打印切片内容
+	// visit([]int{1, 2, 3, 4}, func(v int) {
+	// 	fmt.Println(v)
+	// })
+
+	flag.Parse()
+
+	var skill = map[string]func(){
+		"fire": func() {
+			fmt.Println("chichen fire")
+		},
+		"run": func() {
+			fmt.Println("soldier run")
+		},
+		"fly": func() {
+			fmt.Println("angel fly")
+		},
+	}
+
+	if f, ok := skill[*skillParam]; ok {
+		f()
+	} else {
+		fmt.Println("skill not found")
+	}
 }
