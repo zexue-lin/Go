@@ -31,6 +31,7 @@ func main() {
 
 	fmt.Println(wednesday)
 
+	// 字符串长度
 	tip1 := "genji is a ninja"
 	fmt.Println(len(tip1)) // 16
 	tip2 := "忍者"
@@ -41,7 +42,7 @@ func main() {
 
 	trace := "死神来了，死神bye bye"
 
-	comma := strings.Index(trace, "，")
+	comma := strings.Index(trace, "，") // 逗号第一次出现的位置
 	pos := strings.Index(trace[comma:], "死神")
-	fmt.Println(comma, pos, trace[comma+pos:],trace[15:])
+	fmt.Println(comma, pos, trace[comma+pos:], trace[15:])
 }
