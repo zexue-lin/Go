@@ -9,7 +9,7 @@ func main() {
 
 	myfunc(2, 3, 4, 5)
 
-	myfunc2([]int{7, 8, 9})
+	myfunc2([]int{7, 8, 9}) // 不推荐
 
 	var (
 		v1 int     = 1
@@ -39,10 +39,10 @@ func main() {
 	print(11, 22, 33)
 }
 
-// 可变参数类型
+// 可变参数类型,固定变量类型
 func myfunc(args ...int) {
 	for _, arg := range args {
-		fmt.Println(arg) // 2 3 4 5
+		fmt.Print(arg) // 2 3 4 5
 	}
 }
 

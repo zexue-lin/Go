@@ -6,6 +6,8 @@ func main() {
 	// var a = [3]int{1, 2, 3}
 	// fmt.Println(a,a[1:2]) // [1 2 3] [2]
 
+	//all := []string{"1", "2"}
+	//fmt.Printf("all type is %T", all)
 	// ---------------------1.从指定范围生成切片---------------------
 	fmt.Println("1.从指定范围生成切片")
 	var highRiseBuilding [30]int
@@ -14,7 +16,7 @@ func main() {
 	}
 
 	// 区间
-	fmt.Println(highRiseBuilding[10:15])
+	fmt.Println(highRiseBuilding[10:15]) // 左闭右开  左边取到，右边不取
 
 	// 索引20到尾部的所有元素
 	fmt.Println(highRiseBuilding[20:])
@@ -56,7 +58,7 @@ func main() {
 	e = append(e, 1)
 	e = append(e, 1, 2, 3)
 	e = append(e, []int{4, 5, 6}...) // 追加一个切片, 切片需要解包
-	fmt.Println(e) // [1 1 2 3 4 5 6]
+	fmt.Println(e)                   // [1 1 2 3 4 5 6]
 
 	// 切片在扩容时，容量cap的扩展规律是按容量的2倍进行扩充，如下:
 	var numbers []int
@@ -68,6 +70,6 @@ func main() {
 	// 除了在切片的尾部追加，我们还可以在切片的开头添加元素：
 	fmt.Println("在切片的开头添加元素:")
 	e = append([]int{0}, e...)
-	e = append([]int{-3,-2,-1},e...)
+	e = append([]int{-3, -2, -1}, e...)
 	fmt.Println(e) // [-3 -2 -1 0 1 1 2 3 4 5 6]
 }

@@ -26,7 +26,13 @@ func main() {
 	// 使用
 	l.Remove(element) // 67,canon,noon,high
 
+	// list的遍历，有一个头和尾，Front Next
+	// 正向遍历
 	for i := l.Front(); i != nil; i = i.Next() {
+		fmt.Println(i.Value)
+	}
+	// 反向遍历
+	for i := l.Back(); i != nil; i = i.Prev() {
 		fmt.Println(i.Value)
 	}
 }

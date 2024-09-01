@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"Go/cmd/go_code/test/model"
+	"fmt"
 )
 
 func main() {
