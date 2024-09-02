@@ -18,12 +18,12 @@ func main() {
 	// 编译的时候，类型别名会被直接替换为原本的类型
 	type MyInt = int // 类型别名
 	var i MyInt
-	fmt.Printf("i type is %T\n", i)
+	fmt.Printf("i type is %T\n", i)  // i type is int
 
 	// ------------类型定义 自定义类型(这里没有等于号)------------
 	type MyInt1 int // 自定义的类型，基于已有的类型自定义一个类型
 	var j MyInt1 = 12
-	fmt.Printf("j type is %T\n", j)
+	fmt.Printf("j type is %T\n", j)  // j type is main.MyInt1
 
 	// ------------扩展 interface------------
 	// 接口的类型判断
@@ -57,24 +57,31 @@ func main() {
 	fmt.Println(persons)
 	// 第三种
 	person2 := []Person{
-		// 省略的方式
+		// 省略的方式,不指明字段
 		{"bobby1", 18, "广州市", 1.8},
 		// 指明字段的方式
 		{
 			age: 34,
 		},
 		{
-			name: "bobby4",
+			name: "bobbyi",
 		},
 	}
-	fmt.Println(person2)
+	fmt.Println(person2) // [{bobby1 18 广州市 1.8} { 34  0} {bobbyi 0  0}]
 	//第四种
 
 	var p Person
 	p.age = 20
-	fmt.Println(p.age)
-	fmt.Println(p.height) // 默认值为0
+	fmt.Println(p.age)  // 20
+	fmt.Println(p.height) // 未初始化默认值为0
 
+	per2 := new(Person)
+	per2.age = 23
+	per2.height= 175
+	fmt.Println(per2.age)  
+	fmt.Println(per2.height)
+	fmt.Printf("per2 type is:%T\n",per2) // per2 type is:*main.Person
+	
 	// ------------匿名结构体------------
 	fmt.Println("匿名结构体")
 
