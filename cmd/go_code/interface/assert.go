@@ -43,12 +43,13 @@ func main() {
 	// 实现不同数据类型的加法
 	a := 1.0
 	b := 2.0
-	re := multiadd("hi ", "tom")
 	fmt.Println(multiadd(a, b)) // 3
-	fmt.Println(re)             // hitom
+
+	re := multiadd("hi ", "tom")
+	fmt.Println(re) // hitom
 	// 这里的3 和 hitom 是interface类型
 
-	// 如果想要使用 需要先断言
+	// 如果想要在后续使用它们 需要先断言
 	// 断言：用在处理各种不同类型的分支代码
 	res, _ := re.(string)
 	fmt.Println(strings.Split(res, " "))

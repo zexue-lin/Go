@@ -50,7 +50,7 @@ func (wc *writerCloser) Close() error {
 func main() {
 	//var mw MyWriter = &writerCloser{}
 	//var mc Mycloser = &writerCloser{}
-	// 实例化
+	// 实例
 	var mw MyWriter = &writerCloser{
 		&databaseWriter{}, // 实现
 	}

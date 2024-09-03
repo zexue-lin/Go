@@ -15,7 +15,7 @@ type Person struct {
 
 type Student struct {
 	// --------------------第一种嵌套方式--------------------
-	//p Person
+	//p     Person
 	//score float32
 
 	// --------------------第二种嵌套方式，匿名嵌套--------------------
@@ -43,13 +43,15 @@ func main() {
 	//	},
 	//	score: 98.7,
 	//}
-	//// 取值
-	//fmt.Println(s.p.name)
+	// 取值
+	//fmt.Println(s.p.name) // bobby
+	//fmt.Println(s.score)  // 98.7
 
 	// 第二种赋值方式
-	//s := Student{}
-	//s.p.name = "bobby"
-	//fmt.Println(s.p.name)
+	//s2 := Student{}
+	//s2.p.name = "Tom"
+	//s2.score = 66.7
+	//fmt.Println(s2.p.name)
 
 	// --------------------第二种嵌套方式--------------------
 	// 不需要输入字段名字
@@ -60,12 +62,12 @@ func main() {
 		97.7,
 		"外部Student的name",
 	}
-	//// 取值 有两个name 一个是Person的，一个是Student的，有限访问外部的那个
-	//fmt.Println(s.name)
-	//
-	//// 这里设置的是外面的那个name
-	//s.name = "outside"
-	//fmt.Printf("s内部的实际存储:%v", s)
+	// 取值 有两个name 一个是Person的，一个是Student的，有限访问外部的那个
+	fmt.Println(s.name) // 输出：外部Student的name
+
+	// 这里设置的是外面的那个name
+	s.name = "outside"
+	fmt.Printf("s内部的实际存储:%v\n", s) // {{bobbys 23} 97.7 outside}
 
 	// --------------------结构体定义方法--------------------
 	p := Person{
