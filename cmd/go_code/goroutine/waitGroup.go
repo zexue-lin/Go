@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-// 	time.Sleep(10 * time.Second)
+// time.Sleep(10 * time.Second)
 // 不写time.Sleep
 // 子的goroutine如何通知主goroutine自己结束了，主的goroutine如何知道子goroutine已经结束了
 
