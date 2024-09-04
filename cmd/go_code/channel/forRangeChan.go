@@ -20,7 +20,7 @@ func main() {
 		for data := range msg {
 			fmt.Println(data)
 		}
-		fmt.Println("all down") // 没有打印出来是因为阻塞了，缓冲区为23.使用close 就可以打印出来
+		fmt.Println("all down") // 没有打印出来是因为阻塞了，缓冲区为2 3.使用close 就可以打印出来
 	}(msg)
 
 	msg <- 1

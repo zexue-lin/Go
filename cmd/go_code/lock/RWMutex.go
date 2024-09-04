@@ -45,7 +45,7 @@ func main() {
 		go func() {
 			defer wg.Done()
 			for {
-				rwlock.RLock() // 读锁,读锁不会组织别人的读操作
+				rwlock.RLock() // 读锁,读锁不会阻止别人的读操作
 				//fmt.Println(num)
 				fmt.Println("get read lock")
 				time.Sleep(500 * time.Millisecond)
