@@ -4,7 +4,6 @@ package main
 import (
 	"fmt"
 	"sync"
-	"sync/atomic"
 )
 
 /*
@@ -24,23 +23,23 @@ var lock sync.Mutex
 func add() {
 	defer wg.Done()
 	for i := 1; i <= 1000; i++ {
-		//lock.Lock()
-		//total += 1 // 竞争，两个函数同时执行这一句，要解决使用锁就行
-		//lock.Unlock() // 执行完记得把锁释放掉
+		lock.Lock()
+		total += 1    // 竞争，两个函数同时执行这一句，要解决使用锁就行
+		lock.Unlock() // 执行完记得把锁释放掉
 
 		// 解决办法2 用atomic包
-		atomic.AddInt32(&total, 1)
+		//atomic.AddInt32(&total, 1)
 	}
 }
 
 func sub() {
 	defer wg.Done()
 	for i := 1; i <= 1000; i++ {
-		//lock.Lock()
-		//total -= 1
-		//lock.Unlock()
+		lock.Lock()
+		total -= 1
+		lock.Unlock()
 
-		atomic.AddInt32(&total, -1)
+		// atomic.AddInt32(&total, -1)
 	}
 }
 

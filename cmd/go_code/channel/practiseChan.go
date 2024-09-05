@@ -25,7 +25,7 @@ func printLetter() {
 		<-letter
 		if i >= len(str) {
 			return
-		}
+		} // 防止死循环
 		fmt.Printf(str[i : i+2])
 		i += 2
 		number <- true

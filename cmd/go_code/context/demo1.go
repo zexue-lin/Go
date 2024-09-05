@@ -6,6 +6,9 @@ import (
 	"time"
 )
 
+// 1.有一个goroutine监控cpu的信息
+// 2.我可以主动退出监控程序。解决办法1 共享变量
+
 // 共享变量方式也可以解决，但是go中认为用channel更合理，看demo2
 var wg sync.WaitGroup
 
@@ -46,8 +49,6 @@ func cpuInfo() {
 }
 func main() {
 
-	// 1.有一个goroutine监控cpu的信息
-	// 2.我可以主动退出监控程序。解决办法1 共享变量
 	wg.Add(1)
 	go cpuInfo()
 

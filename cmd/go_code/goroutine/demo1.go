@@ -22,5 +22,5 @@ func main() {
 	}
 
 	fmt.Println("main goroutine")
-	time.Sleep(10 * time.Second)
+	time.Sleep(9 * time.Second)
 }

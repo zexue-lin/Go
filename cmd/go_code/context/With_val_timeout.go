@@ -38,7 +38,7 @@ func main() {
 	// 1.ctx1, cancel1 := context.WithCancel(context.Background()) // 父cancel
 	//ctx2, _ := context.WithCancel(ctx1)                       // 子cancel
 
-	// 2.timeout 主动超时
+	// 2.timeout 主动超时  有两个返回值
 	ctx, _ := context.WithTimeout(context.Background(), time.Second*6)
 
 	//go cpuInfo(ctx)
@@ -49,7 +49,7 @@ func main() {
 
 	// 4.WithDeadLine 在时间点cancel
 
-	// 5.WithValue
+	// 5.WithValue  只有一个返回值
 	valueCtx := context.WithValue(ctx, "traceid", "gtj87i")
 	go cpuInfo(valueCtx)
 

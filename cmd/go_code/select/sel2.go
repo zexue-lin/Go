@@ -38,21 +38,22 @@ func main() {
 
 	// 设置超时时间
 	timer := time.NewTimer(5 * time.Second) // 声明一个timer对象，里面有个channel
-	for {
+
+	// 虽然解决了 但大多时候并不会多个goroutine写同一个channel
+	// 如何监控多个channel呢？ 用select
+
+	for { // 无限循环，让事件处理逻辑持续运行。监听多个通道会在任意一个case上接收到并执行
 		select {
 		case <-g1Channel:
-			fmt.Println("g1 done")
+			fmt.Println("g1 done") // g1快一点
 		case <-g2Channel:
 			fmt.Println("g2 done")
 		case <-timer.C: // C代表channel，1秒之后就可以访问了
 			fmt.Println("timeout")
 			return
-
 		}
 		time.Sleep(10 * time.Millisecond)
-
-		// 虽然解决了 但大多时候并不会多个goroutine写同一个channel
-		// 如何监控多个channel呢？
-
+		// 作用是在 select 语句没有匹配到任何可接收的通道时，让当前 goroutine 睡眠一小段时间。这是为了避免 CPU 的空转，
+		// 如果 select 语句没有匹配任何 case，它会立即再次检查通道是否准备好。这种情况下，如果没有 time.Sleep，循环可能会消耗大量的 CPU 资源。
 	}
 }

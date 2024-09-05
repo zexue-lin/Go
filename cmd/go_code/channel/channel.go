@@ -2,14 +2,13 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 // goroutine之间的通信
 
 func main() {
 	/*
-			不要通过系统系统内存来通信，而要需要通信来实现内存共享
+			不要通过系统内存来通信，而要需要通信来实现内存共享
 
 			在其他语言中，如python、php、java，多线程编程的时候，两个routine之间通信最常用的方式是一个全局变量
 			也会提供消息队列的机制，python-queue java，消费者和生产者之间的关系。
@@ -42,6 +41,6 @@ func main() {
 		fmt.Println(data)
 	}(msg)
 	msg <- "Tom1"
-	time.Sleep(time.Second * 2)
+	//time.Sleep(time.Second * 2)
 
 }
