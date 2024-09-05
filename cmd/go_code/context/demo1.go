@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// 共享变量方式也可以解决，但是go中认为用channel更合理，看demo2
 var wg sync.WaitGroup
 
 // 共享变量 【需加锁保护】
