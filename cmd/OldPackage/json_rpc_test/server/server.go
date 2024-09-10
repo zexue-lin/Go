@@ -4,6 +4,7 @@ import (
 	"log"
 	"net"
 	"net/rpc"
+	"net/rpc/jsonrpc"
 )
 
 type HelloService struct{}
@@ -24,11 +25,10 @@ func main() {
 	// 2.将结构体注册到rpc当中，注册一个handler
 	_ = rpc.RegisterName("HelloService", &HelloService{})
 	// 3.启动服务
-	conn, _ := listener.Accept() // 当一个新的连接进来的时候，
-	rpc.ServeConn(conn)
-	/*
-		一大串代码都是net好像和rpc没关系
-		rpc调用中的有几个问题需要解决: 1.callid 2.序列化和反序列化
-		能否跨语言调用呢 1.go语言的rpc的序列化和反序列化协议是Gob
-	*/
+	for {
+		conn, _ := listener.Accept() // 当一个新的连接进来的时候，
+		go rpc.ServeCodec(jsonrpc.NewServerCodec(conn))
+	}
+
+	// 底层数据传过来是json格式都可以解析
 }
