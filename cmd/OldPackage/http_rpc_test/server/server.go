@@ -16,7 +16,7 @@ func (s *HelloService) Hello(request string, reply *string) error {
 func main() {
 	_ = rpc.RegisterName("HelloService", &HelloService{})
 
-	http.HandleFunc("jsonrpc", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/jsonrpc", func(w http.ResponseWriter, r *http.Request) {
 
 		var conn io.ReadWriteCloser = struct {
 			io.Writer
@@ -27,5 +27,5 @@ func main() {
 		}
 		rpc.ServeRequest(jsonrpc.NewServerCodec(conn))
 	})
-
+	http.ListenAndServe(":1234", nil)
 }
