@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = ".;proto";  // 这里是： 点 分号
+
+message Teacher{
+  string name = 1;
+  repeated string course = 2;
+
+}

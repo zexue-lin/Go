@@ -9,11 +9,17 @@ import (
 	"time"
 )
 
-// 模型定义
+// `User` 属于 `Company`，`CompanyID` 是外键
 type User struct {
-	UserID uint `gorm:"primarykey"`
-	// 自定义列名、字段类型、索引、自定义默认值
-	Name string `gorm:"column:user_name;type:varchar(50);index:idx_user_name;unique;default:'zexue';"`
+	gorm.Model
+	Name      string
+	CompanyID int     // 数据库中存储的字段company_id
+	Company   Company // 真正使用的是这个
+}
+
+type Company struct {
+	ID   int
+	Name string
 }
 
 func main() {
@@ -39,9 +45,25 @@ func main() {
 		panic(err)
 	}
 
-	// 上面定义一个表结构。将表结构直接生成对应的表 - migrations
-	// 迁移 schema
-	_ = db.AutoMigrate(&User{})
-	// Create
-	db.Create(&User{})
+	errs := db.AutoMigrate(&User{}) // 新建了user表和company表，并设置了外键
+	if errs != nil {
+		panic(errs)
+	}
+
+	// 新增一条数据
+	//db.Create(&User{
+	//	Name: "zexue2",
+	//	Company: Company{
+	//		Name: "慕课网",
+	//	},
+	//})
+
+	// 同一个外键，不同的人，不然会再创建一个表
+	db.Create(&User{
+		Name: "zexue2",
+		Company: Company{
+			ID: 1,
+		},
+	})
+
 }

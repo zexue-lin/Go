@@ -25,7 +25,7 @@ func main() {
 	dsn := "root:root@tcp(127.0.0.1:3306)/gorm_test?charset=utf8mb4&parseTime=True&loc=Local"
 
 	// 【日志配置】设置全局的logger，这个logger在执行每个sql语句的时候都会打印每一行sql
-	// sql才是最重要的，standard
+	// sql才是最重要的，std -> standard 标准的
 	newLogger := logger.New(
 		log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
 		logger.Config{
