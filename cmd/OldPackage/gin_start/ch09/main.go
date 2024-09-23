@@ -47,7 +47,12 @@ func TokenRequired() gin.HandlerFunc {
 		c.Next()
 	}
 }
-
+/*
+	关键在于	router.Use(TokenRequired())  
+	这里的Use，点进源码看的时候会发现，会把你注册的中间件放到Handlers切片的后面
+	c.Next() 是通过index来驱动的，只有当index指向一个越界的地址才会停止
+	c.Abort() 就是这样的，把index移动到最大的那个数
+*/
 func main() {
 	// router := gin.Default() // 启动的时候会自动启动Logger()和recovery() 这两个中间件
 
