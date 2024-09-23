@@ -5,5 +5,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Golang-Learn" />
+    <orderEntry type="module" module-name="goshop_srvs" />
   </component>
 </module>

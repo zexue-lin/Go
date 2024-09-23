@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Go.iml" filepath="$PROJECT_DIR$/.idea/Go.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../.idea/Golang-Learn.iml" filepath="$PROJECT_DIR$/../.idea/Golang-Learn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../goshop_srvs/.idea/goshop_srvs.iml" filepath="$PROJECT_DIR$/../goshop_srvs/.idea/goshop_srvs.iml" />
     </modules>
   </component>
 </project>
