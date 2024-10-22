@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -12,7 +13,7 @@ func main() {
 	goodsGroup := router.Group("/goods")
 	{
 		goodsGroup.GET("", goodsList)
-		goodsGroup.GET("/:id:action", goodsDetail) // url 中添加参数
+		goodsGroup.GET("/:id/:action", goodsDetail) // url 中添加参数
 		goodsGroup.POST("/add", createGoods)
 	}
 
@@ -50,3 +51,19 @@ func goodsDetail(c *gin.Context) {
 		"action": action,
 	})
 }
+
+/*
+	针对于方法 goodsDetail
+	此时的utl地址是 http://127.0.0.1/goods/1/delete
+	获取url中的参数 。GET
+	比如获取商品的相信信息，根据商品id来查询
+
+	但是这种匹配模式可以把你url中的list也匹配出来，
+	比如 http://127.0.0.1:8083/goods/list/delete
+	json返回{
+		action: "delete",
+		id: "list"
+	}
+
+	这样明显就不符合规范
+*/

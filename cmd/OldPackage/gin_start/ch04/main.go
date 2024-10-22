@@ -5,8 +5,10 @@ import (
 	"net/http"
 )
 
+// 这个struct对参数进行约束
+// 提取出来与下面拿参数的时候进行对比
 type Person struct {
-	ID   int    `uri:"id" binding:"required"` // 添加约束
+	ID   int    `uri:"id" binding:"required"` // 添加约束，必须要存在，且类型为int
 	Name string `uri:"name" binding:"required"`
 }
 
@@ -29,3 +31,7 @@ func main() {
 		return
 	}
 }
+
+/*
+先提取姓名，再提取id，
+*/
